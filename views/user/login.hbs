@@ -1,0 +1,47 @@
+ <link rel="stylesheet" href="/public/userlogin.css">
+ <form class="login" method="post" action="/user/login">
+   
+  <h2>Welcome, User!</h2>
+  <p>Please log in</p>
+  <input type="email" id="email" placeholder="Email" name="email" required/>
+  <input type="password" id="password" placeholder="Password" name="password" required />
+  <input type="submit" value="Log In" />
+  <div class="links">
+  
+    <a href="/user/register">Register</a>
+  </div>
+</form>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+   document.querySelector('form').addEventListener('submit', formValidate);
+   
+
+
+   })
+
+  const message="{{{message}}}"
+  if(message){
+    Swal.fire(message)
+  }
+  
+function formValidate(e) {
+    e.preventDefault(); // Prevent default form submission
+    console.log("Form submission intercepted");
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    
+
+    
+    
+    if (email == "" || password == "" ) {
+        swal("All Fields are required"); // SweetAlert message for empty fields
+        return false;
+    } 
+
+    // If everything is valid, submit the form
+    e.target.submit();
+    return true;
+}
+
+</script>

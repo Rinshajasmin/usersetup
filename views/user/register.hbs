@@ -1,0 +1,58 @@
+  <link rel="stylesheet" href="/userlogin.css">
+  <form method="post" action="/user/register"  class="login">
+  {{!-- <input type="text" id="message" value="{{{message}}}"> --}}
+  {{!-- <div class="message" id="message">
+  {{{message}}}  <!-- If you just want to display it on the page -->
+</div>
+<p>{{message}}</p> --}}
+  <h2>Welcome, User!</h2>
+  <p>Please  Register</p>
+  <input id="email" type="email" placeholder="Email" name="email"  name="message"/>
+  <input id="password" type="password" placeholder="Password"  name="password"  />
+  <input id="confirmpassword" type="password" placeholder="Confirm password" name="confirmpassword" />
+  <input type="submit" value="Register" />
+  <div class="links">
+    {{!-- //<a href="#">Forgot password</a>
+    //<a href="#">Register</a> --}}
+  </div>
+</form>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+   document.querySelector('form').addEventListener('submit', formValidate);
+   
+
+
+   })
+ const message="{{{message}}}"
+  if(message){
+    console.log(message)
+   Swal.fire(message)
+  }
+   
+
+function formValidate(e) {
+    e.preventDefault(); // Prevent default form submission
+    console.log("Form submission intercepted");
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+                var confirmpassword = document.getElementById('confirmpassword').value;
+
+    //var confirmpassword = document.getElementById;
+    
+    if (email == "" || password == "" || confirmpassword == "") {
+        swal("All Fields are required"); // SweetAlert message for empty fields
+        return false;
+    } else if (password != confirmpassword) {
+        swal("Password do not match"); // SweetAlert message for mismatched passwords
+        return false;
+    }
+
+    // If everything is valid, submit the form
+    e.target.submit();
+    return true;
+}
+
+
+
+</script>

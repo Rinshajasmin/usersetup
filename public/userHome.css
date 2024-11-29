@@ -1,0 +1,46 @@
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-btn, .subscribe-btn {
+    background: #ff4747;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-btn:hover, .subscribe-btn:hover {
+    background: #e84141;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: #fff;
+}
+
+.wlcome-card {
+    text-align: center;
+    padding: 40px;
+    background: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wlcome-card h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.wlcome-card p {
+    color: #666;
+}
